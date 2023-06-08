@@ -10,8 +10,7 @@ int main(void) {
     int count_of_other_char = 0;
 
     printf("Please enter an input:");
-    ch = getchar();
-    while (ch != '#') {
+    while ((ch = getchar()) != '#') {
         if (ch == ' ') {
             count_of_space++;
         } else if (ch == '\n') {
@@ -19,7 +18,6 @@ int main(void) {
         } else {
             count_of_other_char++;
         }
-        ch = getchar();
     }
 
     printf("Count of Space: %i; Count of Line Break: %i; Count of Other Char: %i",
