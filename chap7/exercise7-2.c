@@ -7,15 +7,12 @@ int main(void) {
     int count = 0;
 
     printf("Please enter an input:");
-    ch = getchar();
 
-    while (ch != '#') {
+    while ((ch = getchar()) != '#') {
+        printf("%c-%d,", ch, ch);
         count++;
-        putchar(ch);
-        printf("%d", ch);
         if (count % 8 == 0) {
             printf("\n");
         }
-        ch = getchar();
     }
 }
