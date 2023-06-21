@@ -77,7 +77,6 @@ int main(void) {
     } else {
         freight = EXTRA_FEE_SECOND_LEVEL_AMOUNT + (grand_weight - EXTRA_FEE_SECOND_LEVEL) * EXTRA_FEE_PER_POUND_THIRD_LEVEL;
     }
-    
     grand_total = goods_total - discount + freight;
 
     printf("Details: artichoke: $%f/pd, beet: $%f/pd, carrot: $%f/pd\n"
