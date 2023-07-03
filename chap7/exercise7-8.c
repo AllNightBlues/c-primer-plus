@@ -29,7 +29,7 @@ int main(void) {
                "1) $8.75/hr                  2) $9.33/hr\n"
                "3) $10.00/hr                  4) $11.20/hr\n"
                "5) quit\n*********************************************************\n");
-        choice = getchar();
+        scanf("%c", &choice);
         switch (choice) {
             case '1':
                 salary_per_hour = SALARY_PER_HOUR_1;
@@ -43,6 +43,8 @@ int main(void) {
             case '4':
                 salary_per_hour = SALARY_PER_HOUR_4;
                 break;
+            case '5':
+                continue;
             default:
                 printf("Please input the right option!\n");
                 continue;
@@ -50,7 +52,6 @@ int main(void) {
 
         printf("Please input your working hours:\n");
         scanf("%f", &working_hours);
-        fflush(stdin);
 
         if (working_hours > REGULAR_WORKING_HOURS) {
             overtime_hours = (working_hours - REGULAR_WORKING_HOURS) * OVERTIME_RATE;
@@ -72,6 +73,7 @@ int main(void) {
 
         net_income = total_salary - taxes;
         printf("total_salary: %.2f, taxes: %.2f, net_income: %.2f\n", total_salary, taxes, net_income);
+        while (getchar() != '\n') {}
     }
     printf("Program ended.");
 }
